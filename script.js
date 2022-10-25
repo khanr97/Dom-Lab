@@ -64,7 +64,7 @@ menuLinks.forEach(function (str) {
 //task 4.0 
 const subMenuEl = document.querySelector("#sub-menu")
 //task 4.1
-document.querySelector("#sub-menu").style.height = "100%"
+subMenuEl.style.height = "100%"
 //task 4.2
 subMenuEl.style.background = ("var(--sub-menu-bg)")
 //task 4.3
@@ -77,6 +77,7 @@ subMenuEl.style.top = "0"
 //=============PART 2=================
 //task 5.1
 const topMenuLinks = document.querySelectorAll("#top-menu > a")
+//const topMenuLinks = topMenuEl.querySelectorAll("a")
 console.log(topMenuLinks)
 let showingSubMenu = false
 
@@ -106,14 +107,13 @@ topMenuEl.addEventListener("click", function (evt) {
   let text = evt.target.textContent
   let currentLink = {}
   for (let i = 0; i < menuLinks.length; i++) {
-
     if (text === menuLinks[i].text) {
       showingSubMenu = menuLinks[i].hasOwnProperty("subLinks")
       currentLink = menuLinks[i]
     }
   }
-  console.log(showingSubMenu)
-  console.log(currentLink)
+  //console.log(showingSubMenu)
+  //console.log(currentLink)
   //task 5.7=========
   if (showingSubMenu === true) {
     subMenuEl.style.top = "100%"
@@ -133,9 +133,9 @@ topMenuEl.addEventListener("click", function (evt) {
 
   }
   //6.4
-  if(evt.target.text === "about") {
+  if (evt.target.text === "about") {
     mainEl.innerHTML = `<h1 style = "text-transform:uppercase;">${evt.target.text}</h1>`;
- }
+  }
 })
 //TASK 6.0
 
